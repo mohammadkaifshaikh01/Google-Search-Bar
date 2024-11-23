@@ -1,0 +1,181 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   height: 100vh; /* Full height of the viewport */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column; /* Stacks elements vertically */
+   text-align: center; /* Ensures text and other elements are centered */
+}
+
+#container {
+   width: 100%; /* Full width for flexibility */
+}
+
+#front_image {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin-left: 0;
+   margin-bottom: 20px; /* Space between image and search bar */
+}
+
+#front_image > img {
+   width: 100%;
+   height: auto; /* Maintains aspect ratio */
+   max-width: 390px; /* Limits the image size */
+}
+
+/* Search Container */
+.search-container {
+   position: relative;
+   width:80%; /* Adjusts the container width */
+   /* max-width: 700px; Restricts the maximum width of the search container */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+}
+
+.search-bar {
+   position: relative;
+   display: flex;
+   align-items: center;
+   background-color: #ffffff;
+   border-radius: 30px;
+   padding: 10px;
+   overflow: hidden;
+   transition: all 0.3s ease;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   height: 40px;
+   width:40%;
+}
+
+.search-input {
+   width: 100%;
+   border: none;
+   background: none;
+   color: #000000;
+   font-size: 16px;
+   padding: 10px;
+   outline: none;
+}
+
+.search-input::placeholder {
+   color: #000000;
+}
+
+#search-icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+   background-color: #000000;
+   border-radius: 50%;
+   margin-left: 10px;
+   cursor: pointer;
+   height: 30px;
+   width: 30px;
+}
+
+#search-icon svg {
+   fill: #fff;
+}
+
+#search-icon:active {
+   background-color: #fff;
+}
+
+#clear {
+   margin: 25px;
+   cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   body {
+      padding: 20px;
+   }
+
+   #container {
+      width: 90%;
+   }
+
+   #front_image > img {
+      max-width: 100%;
+   }
+
+   .search-container {
+      width: 100%;
+   }
+
+   .search-bar {
+      width: 90%;
+   }
+}
+
+@media (max-width: 480px) {
+   #front_image > img {
+      max-width: 100%; /* Adapts the image width on very small screens */
+      margin-bottom: 15px;
+   }
+
+   .search-bar {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 5px;
+      height: auto;
+   }
+
+   .search-input {
+      font-size: 14px;
+      padding: 8px;
+   }
+
+   #search-icon {
+      margin-left: 0;
+      margin-top: 10px;
+      align-self: center;
+   }
+
+   #clear {
+      margin: 10px 0;
+   }
+}
+
+@media (max-width: 350px) {
+   #front_image > img {
+      max-width: 90%; /* Adjust image width for very small screens */
+      margin-bottom: 15px;
+   }
+
+   .search-container {
+      width: 100%; /* Ensure the container fits the screen */
+   }
+
+   .search-bar {
+      width: 95%; /* Make the search bar fit within the container */
+      flex-direction: row; /* Keep elements in a row */
+      height: auto; /* Allow height to adjust naturally */
+   }
+
+   .search-input {
+      font-size: 12px; /* Reduce font size for small screens */
+      padding: 6px; /* Adjust padding */
+   }
+
+   #search-icon {
+      height: 25px; /* Reduce size of the search icon */
+      width: 25px;
+      margin-left: 5px; /* Smaller margin for proper spacing */
+   }
+
+   #clear {
+      margin: 15px 0; /* Adjust margin to maintain spacing */
+   }
+}
